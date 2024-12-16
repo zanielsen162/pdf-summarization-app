@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    text-align: center;
+    position: fixed;
+    background: white;
+    width: 100%;
+    box-shadow: 2px 2px 8px #dbdbdb;
+}
+
+.navLink {
+    padding: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Josefin Sans', sans-serif; */
+}
+
+.navLink:hover {
+    background: #ebedeb;
+}
+
+button.logout {
+    background-color: white;
+    padding: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    border-width: 0;
+    font-size: 16px;
+    width: 100%;
+}
+
+button.logout:hover {
+    background: #ebedeb;
+}
+
+h1 {
+    font-size: 100px;
+    padding-top: 140px;
+    font-family: 'DM Serif Text', sans-serif;
+    font-style: semibold;
+    text-transform: uppercase;
+    margin-left: 5%;
+}
+
+h2 {
+    font-size: 80px;
+    padding-top: 100px;
+    font-family: 'Meow Script';
+    margin-left: 5%;
+}
+
+h3 {
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: semibold;
+    text-transform: uppercase;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    }
+
+p {
+    margin: 2% 5% 0% 5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+label {
+    margin: 2% 0% 0% 5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#Sources {
+    background: #b5b5b3;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    text-align: left;
+    grid-column-gap: 2%;
+    margin: 2% 5% 2% 5%;
+    gap: 4%;
+}
+
+.container p {
+    margin: 0%;
+    font-size: 15px;
+}
+
+.card {
+    border: 1.5px solid #e0e0e0;
+    padding: 0px 20px 20px 20px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 8px #e0e0e0;
+}
+
+h3.card {
+    text-align: left;
+}
+
+.cardimg {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.button {
+    padding: 10px;
+    width: 98%;
+    margin: 1% 1% 1% 1%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {background: #e0e0e0}
+
+.buttontext {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-column-gap: 10px;
+    margin: 0% 5% 0% 5%;
+}
+
+.galleryimg {
+    width: 100%;
+}
+
+.gallerytext {
+
+}
+
+.collapsible {
+    background-color: white;
+    cursor: pointer;
+    padding: 20px 2px 2px 2px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: semibold;
+    text-transform: uppercase;
+}
+
+.active, .collapsible:hover {
+}
+
+.content {
+    padding: 18px 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.prompt-sec {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin: 2% 5% 0% 5%;
+}
+
+.prompt-options {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    gap: 3%;
+}
+
+#topic {
+    border-radius: 40px;
+    border-width: 2px;
+    border-color: rgb(196, 195, 195);
+    border-style: solid;
+    height: 40px;
+    padding: 20px;
+}
+
+input[type="file"] {
+    border-radius: 40px;
+    border-width: 2px;
+    border-color: rgb(196, 195, 195);
+    border-style: solid;
+    /* height: 50px; */
+    padding: 20px;
+    margin: 0;
+    top: 50%;
+}
+
+
+
+.button-59 {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  width: 100%;
+  padding: 10px 0px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 5%;
+  text-transform: uppercase;
+  border-radius: 40px;
+}
+
+.button-59:hover {
+    background-color: black;
+    color: white;
+}
+
+.button-59:active {
+    background-color: black;
+    color: white;
+}

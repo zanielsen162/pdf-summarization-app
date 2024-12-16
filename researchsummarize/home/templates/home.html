@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Meow+Script&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <nav>
+        <a class="navLink" href="#Overview">Overview</a>
+        <a class="navLink" href="#Prompt">Prompt</a>
+        <a class="navLink" href="#History">Previous Results</a>
+        {% block content %}
+            {% if user.is_authenticated %}
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <button type="submit" class="logout">Log Out</button>
+                </form>
+            {% else %}
+                <a class="navLink" href="{% url 'login' %}">Login</a>
+            {% endif %}
+        {% endblock %}
+    </nav>
+    
+    <section id="Home">
+      <h1>Research Paper Summarizing</h1>
+    </section>
+    
+    <section id="Overview">
+      <h2>Overview</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna cursus eget nunc scelerisque viverra mauris in aliquam. Rutrum tellus pellentesque eu tincidunt tortor. Scelerisque felis imperdiet proin fermentum leo vel orci porta non. Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Sagittis id consectetur purus ut faucibus pulvinar elementum. Adipiscing elit ut aliquam purus sit amet luctus venenatis. Justo eget magna fermentum iaculis eu. Lorem sed risus ultricies tristique nulla aliquet enim. Ornare lectus sit amet est placerat in egestas. Nec ullamcorper sit amet risus nullam eget felis eget nunc. Nunc consequat interdum varius sit amet. Aliquet lectus proin nibh nisl condimentum id venenatis. Quam id leo in vitae turpis. Pellentesque sit amet porttitor eget dolor morbi non. Egestas pretium aenean pharetra magna ac.</p>
+    </section>
+    
+    <section id="Prompt">
+      <h2>New Prompt</h2>
+      <div class="prompt-sec">
+        <form class="prompt-options" method="POST">
+            {% csrf_token %}
+                {{ form }}
+            <!-- <label for="topic">Research field:</label>
+            <input type="text" id="topic" name="mytopic">
+
+            <label for="topic">Your research interest(s):</label>
+            <input type="text" id="topic" name="myinterests">
+
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile">-->
+            <button type="submit" class="button-59">Summarize</button>
+        </form> 
+        <div class="prompt-results">
+            {% if result %}
+                <div class="result">
+                    <h2>Result:</h2>
+                    <p>{{ result }}</p>  <!-- Display the result here -->
+                </div>
+            {% endif %}
+        </div>
+      </div>
+      
+    </section>
+    
+  
+    <section id="History">
+        <h2>Previous Results</h2>
+        <div class="container">
+            {% for paper in member.list %}
+                <div class="card">
+                    <button type="button" class="collapsible">
+                        paper.paper_name
+                    </button>
+                    <div class="content">
+                        <p>paper.brief_summ</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+      <div class="container">
+        <div class="card">
+          <button type="button" class="collapsible">
+            Paper Name
+          </button>
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+        </div>
+        
+        <div class="card">
+          <button type="button" class="collapsible">
+            Paper Name
+          </button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="Sources">
+      <h2>Sources</h2>
+      
+    </section>
+  </body>
+  <script src="{% static 'functionality.js' %}"></script>
+</html>
