@@ -1,4 +1,4 @@
-# PDF Summarization App
+# PDF Summarization Site
 
 This application allows users to extract and summarize text from PDF documents. It uses the Gemini LLM to extract and summarize data from pdfs while making use of Django to provide a user-interface.
 
