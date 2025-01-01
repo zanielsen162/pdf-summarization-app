@@ -9,7 +9,8 @@ env/
 venv/
 
 # Ignore config.py with sensitive data
-config.py
+core/config.py
+summary/
 
 # Ignore IDE/editor specific files
 *.idea/
